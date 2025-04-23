@@ -1,0 +1,36 @@
+from flask import Flask, render_template
+from flask_socketio import SocketIO
+import psutil
+import time
+import threading
+
+app = Flask(__name__)
+socketio = SocketIO(app)
+
+
+@app.route('/')
+def menu():
+    return render_template('menu.html')
+
+
+@app.route('/chart')
+def chart():
+    return render_template('chart.html')
+
+
+def send_stats():
+    while True:
+        cpu = psutil.cpu_percent()
+        memory = psutil.virtual_memory().percent
+        socketio.emit('update', {'cpu': cpu, 'memory': memory})
+        time.sleep(1)  # Send data every second
+
+
+@socketio.on('connect')
+def connect():
+    print('Client connected')
+    threading.Thread(target=send_stats, daemon=True).start()
+
+
+if __name__ == '__main__':
+    socketio.run(app, debug=True, host='0.0.0.0', port=5000, allow_unsafe_werkzeug=True)
