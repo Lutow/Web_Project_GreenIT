@@ -18,12 +18,27 @@ def chart():
     return render_template('chart.html')
 
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/register')
+def signup():
+    return render_template('register.html')
+
+
+@app.route('/about')
+def aboutus():
+    return render_template('aboutus.html')
+
+
 def send_stats():
     while True:
         cpu = psutil.cpu_percent()
         memory = psutil.virtual_memory().percent
         socketio.emit('update', {'cpu': cpu, 'memory': memory})
-        time.sleep(1)  # Send data every second
+        time.sleep(1) 
 
 
 @socketio.on('connect')
