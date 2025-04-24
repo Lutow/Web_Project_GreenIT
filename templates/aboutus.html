@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Green IT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .eco-bg {
+      background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2534&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+    }
+    .leaf-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .leaf-underline:after {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body class="font-poppins bg-gray-50">
+  <!-- Navbar -->
+{% include 'navbar.html' %}
+
+  <!-- Hero Section -->
+  <header class="eco-bg bg-emerald-900/90 pt-32 pb-24 text-center text-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        <span class="leaf-underline">Why Green IT Matters</span>
+      </h1>
+      <p class="text-xl md:text-2xl leading-relaxed">
+        Creating a sustainable digital future through responsible technology practices
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-6 py-16 -mt-12">
+    <div class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+      <section class="mb-16">
+        <p class="text-lg leading-relaxed text-gray-700 mb-6">
+          We live in a digital age where technology plays a crucial role in our daily lives by powering businesses, communication and innovation. But the environmental impact of computing is often overlooked. From energy consumption to electronic waste, the IT sector contributes significantly to carbon emissions and resource depletion.
+        </p>
+        <p class="text-lg leading-relaxed text-gray-700">
+          Green IT is the practice of designing, manufacturing, using, and disposing of computers, servers and other tech products in an environmentally sustainable way. By adopting Green IT principles, we can reduce energy consumption, minimize electronic waste and lower our carbon footprint.
+        </p>
+      </section>
+
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-emerald-800 mb-8 text-center">
+          The Environmental Impact of Computing
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Energy Card -->
+          <div class="bg-emerald-50 rounded-lg p-6 border-l-4 border-emerald-500">
+            <div class="text-emerald-600 text-4xl mb-4">⚡</div>
+            <h3 class="text-xl font-semibold text-emerald-800 mb-3">Energy Consumption</h3>
+            <p class="text-gray-700">
+              Data centers, servers and personal computers consume large amounts of electricity; much of which comes from non-renewable sources. Optimizing energy efficiency is key to reducing this impact.
+            </p>
+          </div>
+
+          <!-- E-waste Card -->
+          <div class="bg-emerald-50 rounded-lg p-6 border-l-4 border-emerald-500">
+            <div class="text-emerald-600 text-4xl mb-4">🗑️</div>
+            <h3 class="text-xl font-semibold text-emerald-800 mb-3">E-waste</h3>
+            <p class="text-gray-700">
+              Millions of tons of electronic waste are generated each year, often containing toxic materials like lead and mercury. Proper recycling and sustainable design are essential to mitigating this problem.
+            </p>
+          </div>
+
+          <!-- Resources Card -->
+          <div class="bg-emerald-50 rounded-lg p-6 border-l-4 border-emerald-500">
+            <div class="text-emerald-600 text-4xl mb-4">⛏️</div>
+            <h3 class="text-xl font-semibold text-emerald-800 mb-3">Resource Depletion</h3>
+            <p class="text-gray-700">
+              The production of hardware requires rare minerals and metals, leading to environmental degradation and unethical mining practices. Extending device lifespans and promoting circular economy models can help.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-3xl font-bold text-emerald-800 mb-8 text-center">
+          Why Ecology in IT is Essential
+        </h2>
+
+        <div class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl p-8 mb-8">
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Sustainable computing isn't just about reducing harm but more about creating a future where technology and ecology coexist. By embracing Green IT, we can:
+          </p>
+
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <span class="text-emerald-600 mr-3 mt-1">✓</span>
+              <span class="text-gray-700">Lower energy costs through efficient hardware and renewable energy use.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-emerald-600 mr-3 mt-1">✓</span>
+              <span class="text-gray-700">Reduce pollution by minimizing toxic e-waste and promoting responsible recycling.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-emerald-600 mr-3 mt-1">✓</span>
+              <span class="text-gray-700">Support ethical innovation by choosing eco-friendly products and sustainable cloud solutions.</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-center text-lg text-gray-700">
+          We are committed to raising awareness around Green IT, its practices and building a greener digital future.
+        </p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
