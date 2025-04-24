@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fcecd2;
+      padding-top: 64px;
+    }
+
+    .login-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      margin: 40px auto;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: grey;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+      box-sizing: border-box;
+      background-color: #f3f3f3;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #047857;
+      color: white;
+      font-weight: 600;
+      padding: 12px; /
+      padding-left: 15px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #065f46;
+    }
+
+    .sign-up-link {
+      color: #047857;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .sign-up-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-sans">
+  <!-- Navbar -->
+{% include 'navbar.html' %}
+
+  <!-- Main Content -->
+  <main class="px-4">
+    <div class="login-container">
+      <!-- Logo -->
+      <div class="logo-container">
+        🌱
+      </div>
+
+      <!-- Login Form -->
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <label for="email">&#9993;</label>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">&#128274;</label>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="SE CONNECTER">
+        </div>
+      </form>
+
+      <!-- Sign-Up Link -->
+      <div class="form-group" style="margin-bottom: 0;">
+        <p>Vous n'avez pas de compte? <a href="/register" class="sign-up-link">Essayez gratuitement</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
