@@ -104,6 +104,40 @@
     </div>
   </nav>
 
+      <!-- Flash Message display block-->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50">
+        {% for category, message in messages %}
+          {% if category.startswith("name-error") %} <!-- Filter by specific route category -->
+            <div class="relative bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
+              <span>{{ message }}</span>
+              <!-- Dismiss button -->
+              <button class="absolute top-1 right-2 text-white hover:text-gray-300 font-bold"
+                      onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% endif %}
+          {% if category.startswith("mail-error") %} <!-- Filter by specific route category -->
+            <div class="relative bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
+              <span>{{ message }}</span>
+              <!-- Dismiss button -->
+              <button class="absolute top-1 right-2 text-white hover:text-gray-300 font-bold"
+                      onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% endif %}
+          {% if category.startswith("successful-register") %} <!-- Filter by specific route category -->
+            <div class="relative bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
+              <span>{{ message }}</span>
+              <!-- Dismiss button -->
+              <button class="absolute top-1 right-2 text-white hover:text-gray-300 font-bold"
+                      onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
   <!-- Main Content -->
   <main class="px-4"> <!-- Added horizontal padding for mobile -->
     <div class="register-container">
@@ -116,8 +150,8 @@
 
       <form action="/register" method="POST">
         <div class="form-group">
-          <label for="fullname">Pseudo :</label>
-          <input type="text" id="fullname" name="fullname" placeholder="Votre pseudo" required>
+          <label for="username">Pseudo :</label>
+          <input type="text" id="username" name="username" placeholder="Votre pseudo" required>
         </div>
 
         <div class="form-group">

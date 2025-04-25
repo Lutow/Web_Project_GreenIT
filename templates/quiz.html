@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Green IT & Changement Climatique</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-green-700 text-white fixed w-full z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center space-x-8">
+          <a href="/" class="text-2xl font-bold">🌱 Green IT</a>
+          <a href="/quiz" class="hover:text-green-200">Quiz</a>
+          <a href="/chart" class="hover:text-green-200">Live</a>
+          <a href="/about" class="hover:text-green-200">About Us</a>
+        </div>
+        <div>
+          <a href="/logout" class="bg-red-700 text-white px-4 py-2 rounded-lg hover:bg-red-800 font-semibold transition">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="pt-32 pb-10 bg-green-50 text-center">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-green-800 mb-4">
+      Quiz Green IT & Changement Climatique
+    </h1>
+    <p class="text-lg sm:text-xl text-green-900 max-w-2xl mx-auto">
+      Testez vos connaissances sur le Green IT et le changement climatique.
+    </p>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-12">
+    <!-- Quiz 1 : Introduction au Green IT -->
+    <section class="border p-4 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4 text-green-700">Quiz 1 : Introduction au Green IT</h2>
+      <form action="/submit-quiz" method="POST">
+        <input type="hidden" name="quiz_id" value="1">
+        <!-- Question 1 -->
+        <div class="mb-4">
+          <p class="font-semibold">1. Quel est le principal objectif du Green IT ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q1" value="a" class="mr-2"> Réduire les coûts uniquement
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="b" class="mr-2"> Améliorer les performances uniquement
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="c" class="mr-2"> Réduire l'impact environnemental tout en optimisant les ressources
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="d" class="mr-2"> Augmenter la consommation énergétique
+            </label>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="mb-4">
+          <p class="font-semibold">2. Quelles technologies favorisent le Green IT ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q2" value="a" class="mr-2"> Virtualisation et Cloud Computing
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="b" class="mr-2"> Systèmes surdimensionnés
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="c" class="mr-2"> Utilisation exclusive de matériel obsolète
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="d" class="mr-2"> Aucune de ces réponses
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+          Valider Quiz 1
+        </button>
+      </form>
+    </section>
+
+    <!-- Quiz 2 : Changement Climatique -->
+    <section class="border p-4 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4 text-green-700">Quiz 2 : Changement Climatique</h2>
+      <form action="/submit-quiz" method="POST">
+        <input type="hidden" name="quiz_id" value="2">
+        <!-- Question 1 -->
+        <div class="mb-4">
+          <p class="font-semibold">1. Quel gaz à effet de serre est principalement responsable du réchauffement planétaire ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q1" value="a" class="mr-2"> Hélium
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="b" class="mr-2"> Dioxyde de carbone (CO₂)
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="c" class="mr-2"> Oxygène
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="d" class="mr-2"> Azote
+            </label>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="mb-4">
+          <p class="font-semibold">2. Quel secteur émet le plus de CO₂ selon les études internationales ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q2" value="a" class="mr-2"> Agriculture
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="b" class="mr-2"> Transports
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="c" class="mr-2"> Industrie
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="d" class="mr-2"> Énergie
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+          Valider Quiz 2
+        </button>
+      </form>
+    </section>
+
+    <!-- Quiz 3 : Technologies Durables -->
+    <section class="border p-4 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4 text-green-700">Quiz 3 : Technologies Durables</h2>
+      <form action="/submit-quiz" method="POST">
+        <input type="hidden" name="quiz_id" value="3">
+        <!-- Question 1 -->
+        <div class="mb-4">
+          <p class="font-semibold">1. Quel est l'avantage principal de la virtualisation ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q1" value="a" class="mr-2"> Réduire l'utilisation de ressources physiques
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="b" class="mr-2"> Augmenter les coûts énergétiques
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="c" class="mr-2"> Complexifier l'infrastructure
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="d" class="mr-2"> Aucune de ces réponses
+            </label>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="mb-4">
+          <p class="font-semibold">2. Quel type d'infrastructure permet de réduire l'empreinte carbone en optimisant l'utilisation de serveurs ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q2" value="a" class="mr-2"> Infrastructure monolithique
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="b" class="mr-2"> Cloud Computing
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="c" class="mr-2"> Serveurs physiques redondants
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="d" class="mr-2"> Utilisation exclusive de data centers
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+          Valider Quiz 3
+        </button>
+      </form>
+    </section>
+
+    <!-- Quiz 4 : Impact Environnemental -->
+    <section class="border p-4 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-4 text-green-700">Quiz 4 : Impact Environnemental</h2>
+      <form action="/submit-quiz" method="POST">
+        <input type="hidden" name="quiz_id" value="4">
+        <!-- Question 1 -->
+        <div class="mb-4">
+          <p class="font-semibold">1. Quel impact majeur a l'utilisation excessive d'énergie sur le climat ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q1" value="a" class="mr-2"> Augmentation des émissions de CO₂
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="b" class="mr-2"> Réduction de la pollution
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="c" class="mr-2"> Diminution de l'effet de serre
+            </label>
+            <label class="block">
+              <input type="radio" name="q1" value="d" class="mr-2"> Aucun impact
+            </label>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="mb-4">
+          <p class="font-semibold">2. Quelle démarche peut réduire l'empreinte carbone d'une entreprise ?</p>
+          <div class="mt-2">
+            <label class="block">
+              <input type="radio" name="q2" value="a" class="mr-2"> L'optimisation des ressources et l'utilisation d'énergies renouvelables
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="b" class="mr-2"> L'augmentation de la surveillance énergétique
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="c" class="mr-2"> La réduction du personnel technique
+            </label>
+            <label class="block">
+              <input type="radio" name="q2" value="d" class="mr-2"> Aucune de ces réponses
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+          Valider Quiz 4
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="mt-10 text-center text-gray-600">
+    <p>&copy; 2025 Green IT & Changement Climatique</p>
+  </footer>
+</body>
+</html>
