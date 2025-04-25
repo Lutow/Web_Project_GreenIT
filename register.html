@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fcecd2;
+      padding-top: 64px; /* Matches navbar height */
+    }
+
+    .register-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      width: 90%; /* Responsive width */
+      max-width: 400px; /* Maximum width */
+      margin: 40px auto; /* Centering */
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 2rem; /* Larger emoji */
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      color: #2f4f4f;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #2f4f4f;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      box-sizing: border-box;
+      background-color: #f3f3f3;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #047857;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      margin-top: 10px;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #065f46;
+    }
+
+    .login-link {
+      color: #047857;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="bg-green-700 text-white fixed top-0 w-full z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center space-x-8">
+          <a href="/" class="text-2xl font-bold">🌱 Green IT</a>
+          <a href="/quiz" class="hover:text-green-200">Quiz</a>
+          <a href="/chart" class="hover:text-green-200">Live</a>
+          <a href="/about" class="hover:text-green-200">About Us</a>
+        </div>
+        <div>
+          <a href="/login" class="bg-white text-green-700 px-4 py-2 rounded-lg hover:bg-green-100 font-semibold transition">Log In / Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+      <!-- Flash Message display block-->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50">
+        {% for category, message in messages %}
+          {% if category.startswith("name-error") %} <!-- Filter by specific route category -->
+            <div class="relative bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
+              <span>{{ message }}</span>
+              <!-- Dismiss button -->
+              <button class="absolute top-1 right-2 text-white hover:text-gray-300 font-bold"
+                      onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% endif %}
+          {% if category.startswith("mail-error") %} <!-- Filter by specific route category -->
+            <div class="relative bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
+              <span>{{ message }}</span>
+              <!-- Dismiss button -->
+              <button class="absolute top-1 right-2 text-white hover:text-gray-300 font-bold"
+                      onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% endif %}
+          {% if category.startswith("successful-register") %} <!-- Filter by specific route category -->
+            <div class="relative bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
+              <span>{{ message }}</span>
+              <!-- Dismiss button -->
+              <button class="absolute top-1 right-2 text-white hover:text-gray-300 font-bold"
+                      onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Main Content -->
+  <main class="px-4"> <!-- Added horizontal padding for mobile -->
+    <div class="register-container">
+      <!-- Logo -->
+      <div class="logo-container">
+        🌱
+      </div>
+
+      <h2>Créer un compte</h2>
+
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <label for="username">Pseudo :</label>
+          <input type="text" id="username" name="username" placeholder="Votre pseudo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email :</label>
+          <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mot de passe :</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Confirmer le mot de passe :</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="••••••••" required>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Créer mon compte">
+        </div>
+      </form>
+
+      <p>Déjà inscrit ? <a href="/login" class="login-link">Se connecter</a></p>
+    </div>
+  </main>
+</body>
+</html>
