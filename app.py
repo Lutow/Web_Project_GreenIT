@@ -28,6 +28,11 @@ def chart():
     return render_template('chart.html')
 
 
+@app.route('/about')
+def aboutus():
+    return render_template('aboutus.html')
+    
+
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
