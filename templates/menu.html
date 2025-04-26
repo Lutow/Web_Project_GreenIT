@@ -1,29 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-800 font-sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .carousel {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        overflow: hidden;
+      }
 
-  <!-- Navbar -->
-{% include 'navbar.html' %}
+      .carousel-images {
+        display: flex;
+        transition: transform 0.65s ease-in-out;
+        width: 100%;
+        height: 100%;
+      }
+      .carousel-images img {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        object-fit: cover; /* Ajuste l'image pour remplir le cadre */
+      }
+      .carousel-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+        color: white;
+        font-style: italic;
+        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
+      }
+      button {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+      }
 
-  <header class="pt-32 pb-20 bg-green-50 text-center">
-    <h1 class="text-4xl sm:text-5xl font-extrabold text-green-800 mb-4">
-      Empowering a Greener Future with Technology
-    </h1>
-    <p class="text-lg sm:text-xl text-green-900 max-w-2xl mx-auto">
-      Discover how IT can be sustainable, efficient, and planet-friendly. Learn, quiz yourself, and see real-time impact.
-    </p>
-    <div class="mt-8">
-      <a href="/quiz" class="bg-emerald-900 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition">
-        Play
-      </a>
+      .prev-btn {
+        font-size: 15px;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+      }
+
+      .next-btn {
+        font-size: 15px;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800 font-sans">
+    <!-- Navbar -->
+    {% include 'navbar.html' %}
+
+    <header class="pt-32 pb-20 bg-green-50 text-center">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-green-800 mb-4">
+        Empowering a Greener Future with Technology
+      </h1>
+      <p class="text-lg sm:text-xl text-green-900 max-w-2xl mx-auto">
+        Discover how IT can be sustainable, efficient, and planet-friendly.
+        Learn, quiz yourself, and see real-time impact.
+      </p>
+      <div class="mt-8">
+        <a
+          href="/quiz"
+          class="bg-emerald-900 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-800 transition"
+        >
+          Play
+        </a>
+      </div>
+    </header>
+
+    <!--Carousel-->
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="../image/impact-carbone-IA.jpg" alt="img 1" />
+        <img src="../image/greenIT.png" alt="img 2" />
+        <img src="../image/energy.png" alt="img 3" />
+        <img src="../image/datacenter.jpg" alt="img 4" />
+      </div>
+      <button class="prev-btn">❮</button>
+      <button class="next-btn">❯</button>
     </div>
-  </header>
 
-</body>
+    <script>
+      const carouselImages = document.querySelector(".carousel-images");
+      const images = document.querySelectorAll(".carousel-images img");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+      const scrollBtn = document.querySelector(".scroll-btn");
+
+      let index = 0;
+
+      function updateCarousel() {
+        const width = images[0].clientWidth;
+        carouselImages.style.transform = `translateX(${-index * width}px)`;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        document
+          .getElementById("container")
+          .scrollIntoView({ behavior: "smooth" });
+      });
+
+      const nextImage = () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      };
+
+      setInterval(nextImage, 6000);
+
+      // Adjust carousel on window resize
+
+      window.addEventListener("resize", updateCarousel);
+
+      // -------------------------
+
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector(".full-width-line");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
 </html>
