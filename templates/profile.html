@@ -112,13 +112,17 @@
         <ul class="divide-y divide-gray-300">
           {% for score in user.scores %}
             <li class="py-2 flex justify-between">
+              <span>Quiz ID: {{ score.quiz_id }}</span>
+              <span>Score: {{ score.score }}</span>
+              <span>Date: {{ score.date.strftime('%d %B %Y, %H:%M:%S') }}</span>
             </li>
           {% endfor %}
         </ul>
       {% else %}
-        <p class="text-gray-600">No scores available yet. Take a quiz to get started!</p>
-      {% endif %}
-    </div>
+    <p class="text-gray-600">No scores available yet. Take a quiz to get started!</p>
+  {% endif %}
+</div>
+
 
     <div class="mt-10">
       <a href="/" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Back to Menu</a>
