@@ -148,11 +148,12 @@ def submit_quiz():
         return redirect(url_for('quiz'))
 
     correct_answers = {
-        1: {'q1': 'c', 'q2': 'a'},  # Quiz 1 : Q1 -> 'c', Q2 -> 'a'
-        2: {'q1': 'b', 'q2': 'd'},  # Quiz 2 : Q1 -> 'b', Q2 -> 'd'
-        3: {'q1': 'a', 'q2': 'b'},  # Quiz 3 : Q1 -> 'a', Q2 -> 'b'
-        4: {'q1': 'a', 'q2': 'a'}  # Quiz 4 : Q1 -> 'a', Q2 -> 'a'
+        1: {'q1': 'c', 'q2': 'a', 'q3': 'd', 'q4': 'b'},  # Quiz 1
+        2: {'q1': 'b', 'q2': 'd', 'q3': 'a', 'q4': 'c'},  # Quiz 2
+        3: {'q1': 'a', 'q2': 'b', 'q3': 'd', 'q4': 'a'},  # Quiz 3
+        4: {'q1': 'a', 'q2': 'a', 'q3': 'b', 'q4': 'c'}  # Quiz 4
     }
+
     score = 0
     quiz_answers = correct_answers.get(quiz_id, {})
     for question, correct_response in quiz_answers.items():
@@ -167,7 +168,7 @@ def submit_quiz():
         {'username': session['user']},
         {'$push': {'scores': score_record}}
     )
-    flash(f"Quiz {quiz_id} soumis. Votre score: {score} / {len(quiz_answers)}", "success")
+    flash(f"Quiz {quiz_id} soumis. Votre score: {score} / {len(quiz_answers)}", "quiz-submit")
     return redirect(url_for('quiz'))
 
 
