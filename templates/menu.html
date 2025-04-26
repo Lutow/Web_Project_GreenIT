@@ -6,12 +6,21 @@
     <title>Menu</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      .carousel-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
       .carousel {
         position: relative;
-        width: 100%;
-        height: 100vh;
-        margin: 0 auto;
+        width: 80%;
+        max-width: 1000px;
+        height: 400px;
+        background-color: white;
+        border-radius: 20px;
         overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       }
 
       .carousel-images {
@@ -20,22 +29,18 @@
         width: 100%;
         height: 100%;
       }
-      .carousel-images img {
+      .carousel-images a {
         width: 100%;
         height: 100%;
         flex-shrink: 0;
-        object-fit: cover; /* Ajuste l'image pour remplir le cadre */
       }
-      .carousel-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 5rem;
-        color: white;
-        font-style: italic;
-        /*text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);*/
+      .carousel-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
       }
+
       button {
         position: absolute;
         background-color: rgba(0, 0, 0, 0.5);
@@ -44,20 +49,17 @@
         cursor: pointer;
         padding: 10px;
         border-radius: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 15px;
       }
 
       .prev-btn {
-        font-size: 15px;
-        top: 50%;
         left: 10px;
-        transform: translateY(-50%);
       }
 
       .next-btn {
-        font-size: 15px;
-        top: 50%;
         right: 10px;
-        transform: translateY(-50%);
       }
     </style>
   </head>
@@ -82,25 +84,41 @@
         </a>
       </div>
     </header>
-
-    <!--Carousel-->
-    <div class="carousel">
-      <div class="carousel-images">
-        <img src="../image/impact-carbone-IA.jpg" alt="img 1" />
-        <img src="../image/greenIT.png" alt="img 2" />
-        <img src="../image/energy.png" alt="img 3" />
-        <img src="../image/datacenter.jpg" alt="img 4" />
+    <div class="pt-32 pb-20 bg-green-50 text-center">
+      <h3 class="text-4xl sm:text-5xl font-extrabold text-green-800 mb-4">
+        Discover more about the following subjects !
+      </h3>
+      <!-- Carousel -->
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="carousel-images">
+            <a
+              href="https://greenoco.io/quel-est-limpact-carbone-de-chatgpt-et-de-lia/"
+              target="_blank"
+            >
+              <img src="../image/impact-carbone-IA.jpg" alt="Impact IA" />
+            </a>
+            <a href="https://example.com/greenit" target="_blank">
+              <img src="../image/greenIT.png" alt="Green IT" />
+            </a>
+            <a href="https://example.com/energy" target="_blank">
+              <img src="../image/energy.png" alt="Energy" />
+            </a>
+            <a href="https://example.com/datacenter" target="_blank">
+              <img src="../image/datacenter.jpg" alt="Datacenter" />
+            </a>
+          </div>
+          <button class="prev-btn">❮</button>
+          <button class="next-btn">❯</button>
+        </div>
       </div>
-      <button class="prev-btn">❮</button>
-      <button class="next-btn">❯</button>
     </div>
 
     <script>
       const carouselImages = document.querySelector(".carousel-images");
-      const images = document.querySelectorAll(".carousel-images img");
+      const images = document.querySelectorAll(".carousel-images a"); // <a> maintenant
       const prevBtn = document.querySelector(".prev-btn");
       const nextBtn = document.querySelector(".next-btn");
-      const scrollBtn = document.querySelector(".scroll-btn");
 
       let index = 0;
 
@@ -119,12 +137,6 @@
         updateCarousel();
       });
 
-      scrollBtn.addEventListener("click", () => {
-        document
-          .getElementById("container")
-          .scrollIntoView({ behavior: "smooth" });
-      });
-
       const nextImage = () => {
         index = (index + 1) % images.length;
         updateCarousel();
@@ -132,20 +144,7 @@
 
       setInterval(nextImage, 6000);
 
-      // Adjust carousel on window resize
-
       window.addEventListener("resize", updateCarousel);
-
-      // -------------------------
-
-      window.addEventListener("scroll", function () {
-        var header = document.querySelector(".full-width-line");
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
     </script>
   </body>
 </html>
