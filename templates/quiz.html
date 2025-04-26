@@ -14,22 +14,7 @@
   </script>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-  <!-- Navbar -->
-  <nav class="bg-green-700 text-white fixed w-full z-50 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <div class="flex items-center space-x-8">
-          <a href="/" class="text-2xl font-bold">🌱 Green IT</a>
-          <a href="/quiz" class="hover:text-green-200">Quiz</a>
-          <a href="/chart" class="hover:text-green-200">Live</a>
-          <a href="/about" class="hover:text-green-200">About Us</a>
-        </div>
-        <div>
-          <a href="/logout" class="bg-red-700 text-white px-4 py-2 rounded-lg hover:bg-red-800 font-semibold transition">Log Out</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  {% include 'navbar.html' %}
 
       <!-- Flash Message display block-->
   {% with messages = get_flashed_messages(with_categories=true) %}
@@ -68,7 +53,7 @@
 
    <main class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-4">
      <div class="border p-4 rounded-lg shadow">
-  <button onclick="toggleQuiz('quiz1')" class="w-full text-left bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+  <button onclick="toggleQuiz('quiz1')" class="w-full text-left bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
     Quiz 1: Introduction au Green IT
   </button>
   <div id="quiz1" class="hidden mt-4">
@@ -114,14 +99,14 @@
           <label class="block"><input type="radio" name="q4" value="d" class="mr-2"> Utiliser uniquement des technologies anciennes</label>
         </div>
       </div>
-      <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 1</button>
+      <button type="submit" class="bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 1</button>
     </form>
   </div>
 </div>
 
 
     <div class="border p-4 rounded-lg shadow">
-  <button onclick="toggleQuiz('quiz2')" class="w-full text-left bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+  <button onclick="toggleQuiz('quiz2')" class="w-full text-left bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
     Quiz 2: Changement Climatique
   </button>
   <div id="quiz2" class="hidden mt-4">
@@ -167,14 +152,14 @@
           <label class="block"><input type="radio" name="q4" value="d" class="mr-2"> Aucun impact</label>
         </div>
       </div>
-      <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 2</button>
+      <button type="submit" class="bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 2</button>
     </form>
   </div>
 </div>
 
 
     <div class="border p-4 rounded-lg shadow">
-  <button onclick="toggleQuiz('quiz3')" class="w-full text-left bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+  <button onclick="toggleQuiz('quiz3')" class="w-full text-left bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
     Quiz 3: Technologies Durables
   </button>
   <div id="quiz3" class="hidden mt-4">
@@ -220,13 +205,13 @@
           <label class="block"><input type="radio" name="q4" value="d" class="mr-2"> Aucun défi</label>
         </div>
       </div>
-      <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 3</button>
+      <button type="submit" class="bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 3</button>
     </form>
   </div>
 </div>
 
   <div class="border p-4 rounded-lg shadow">
-  <button onclick="toggleQuiz('quiz4')" class="w-full text-left bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
+  <button onclick="toggleQuiz('quiz4')" class="w-full text-left bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">
     Quiz 4: Impact Environnemental
   </button>
   <div id="quiz4" class="hidden mt-4">
@@ -272,7 +257,7 @@
           <label class="block"><input type="radio" name="q4" value="d" class="mr-2"> Ignorer l'impact environnemental</label>
         </div>
       </div>
-      <button type="submit" class="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 4</button>
+      <button type="submit" class="bg-emerald-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 font-semibold transition">Valider Quiz 4</button>
     </form>
   </div>
 </div>
@@ -282,5 +267,6 @@
   <footer class="mt-10 text-center text-gray-600">
     <p>&copy; 2025 Green IT & Changement Climatique</p>
   </footer>
+   </main>
 </body>
 </html>
