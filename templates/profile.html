@@ -31,7 +31,7 @@
       <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50">
         {% for category, message in messages %}
           {% if category.startswith("update-profile") %} <!-- Filter by specific route category -->
-            <div class="relative bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
+            <div class="relative bg-emerald-500 text-white px-6 py-3 rounded-lg shadow-lg mb-4">
               <span>{{ message }}</span>
               <!-- Dismiss button -->
               <button class="absolute top-1 right-2 text-white hover:text-gray-300 font-bold"
