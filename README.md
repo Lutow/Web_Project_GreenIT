@@ -25,6 +25,8 @@ Users can learn about Green IT principles through interactive quizzes and observ
 
 ## 🚀 Getting Started
 
+THIS IS FOR LOCAL DEPLOYMENT IN CASE GLOBAL DEPLOYMENT ON ONLINE SERVER DOES NOT WORK
+
 ### 1. Clone the Repository
 
 ```bash
@@ -77,6 +79,8 @@ flask run
 ```
 
 The app will be available at `http://127.0.0.1:5000/`.
+
+IF THE DEPLOYMENT ON RENDER.COM OR ANY OTHER PLATFORM THAT SUITS THE PROJECT IS SUCCESSFUL, THE URL TO ACCESS THE WEBAPP IS : 
 
 ----------
 
