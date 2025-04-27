@@ -1,3 +1,5 @@
+import eventlet
+eventlet.monkey_patch()                 # les 2 premières lignes sont à supprimer en cas de problème (Import pour monitor les perfs du pc host)
 from flask import Flask, render_template, request, redirect, session, url_for, flash
 from flask_socketio import SocketIO
 from flask_pymongo import PyMongo
