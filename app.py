@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.secret_key = 'my_secret_key'
 socketio = SocketIO(app)
 
-app.config["MONGO_URI"] = "mongodb://18.156.158.53:27017/quizdb"
+app.config["MONGO_URI"] = "mongodb+srv://Nicolas:shrek123@cluster0.ywwcgdb.mongodb.net/quizdb"
 mongo = PyMongo(app)
 
 @app.route('/')
