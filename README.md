@@ -139,7 +139,7 @@ IF THE DEPLOYMENT ON RENDER.COM OR ANY OTHER PLATFORM THAT SUITS THE PROJECT IS 
 -   Extend monitoring to include GPU and Network usage.
     
 -   Implement the live chart on every pages instead of going in a dedicated place.
-- 
+  
 ----------
 
 ## ✨ Acknowledgements
