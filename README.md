@@ -1,4 +1,4 @@
-# 🌱 Green IT Awareness Platform
+# 🌱 Ctrl + Save the planet
 
 An interactive educational platform that teaches users about eco-friendly computing practices through quizzes and real-time system monitoring.
 
