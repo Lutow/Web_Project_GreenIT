@@ -139,7 +139,17 @@ IF THE DEPLOYMENT ON RENDER.COM OR ANY OTHER PLATFORM THAT SUITS THE PROJECT IS 
 -   Extend monitoring to include GPU and Network usage.
     
 -   Implement the live chart on every pages instead of going in a dedicated place.
-  
+
+----------
+
+## Workload Repartition
+
+Timothée: Live Monitoring, Log In and Register Pages and parts of the Menu and the navbar, Render.com deployment
+Nicolas: Backend with database design (Mongo DB compass and Atlas), navbar adaptability for connection, password hasing, quiz design, Render.com deployment
+Matthieu: Caroussel, parts of the menu, report   
+Julien: Readme.md, prepared the repository for online deployment, report
+Thomas: report, about us page, Render.com deployment
+
 ----------
 
 ## ✨ Acknowledgements
