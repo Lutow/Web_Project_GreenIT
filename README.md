@@ -150,7 +150,7 @@ IF THE DEPLOYMENT ON RENDER.COM OR ANY OTHER PLATFORM THAT SUITS THE PROJECT IS 
   
 - Matthieu: Caroussel, parts of the menu, report
   
-- Julien: Readme.md, prepared the repository for online deployment, report
+- Julien: Readme.md, prepared the repository for online deployment, prepared the environment and variables, report
   
 - Thomas: report, about us page, Render.com deployment
 
