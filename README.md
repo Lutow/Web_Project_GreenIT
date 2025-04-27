@@ -144,11 +144,15 @@ IF THE DEPLOYMENT ON RENDER.COM OR ANY OTHER PLATFORM THAT SUITS THE PROJECT IS 
 
 ## Workload Repartition
 
-Timothée: Live Monitoring, Log In and Register Pages and parts of the Menu and the navbar, Render.com deployment
-Nicolas: Backend with database design (Mongo DB compass and Atlas), navbar adaptability for connection, password hasing, quiz design, Render.com deployment
-Matthieu: Caroussel, parts of the menu, report   
-Julien: Readme.md, prepared the repository for online deployment, report
-Thomas: report, about us page, Render.com deployment
+- Timothée: Live Monitoring, Log In and Register Pages and parts of the Menu and the navbar, Render.com deployment
+
+- Nicolas: Backend with database design (Mongo DB compass and Atlas), navbar adaptability for connection, password hasing, quiz design, Render.com deployment
+  
+- Matthieu: Caroussel, parts of the menu, report
+  
+- Julien: Readme.md, prepared the repository for online deployment, report
+  
+- Thomas: report, about us page, Render.com deployment
 
 ----------
 
